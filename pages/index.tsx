@@ -1,4 +1,3 @@
-// src/pages/HomePage.tsx
 import React, { useState, useEffect } from "react";
 import ExpenseLineChart from "@/Components/lineChart";
 import ExpenseBarChart from "@/Components/barChart";
@@ -11,6 +10,12 @@ interface ProcessedData {
   paymentMethods: Record<string, number>;
   dailySpends: Record<string, number>;
   categorySpends: Record<string, number>;
+}
+
+interface Settings {
+  dateRange: string;
+  paymentMethods: string[];
+  categories: string[];
 }
 
 const HomePage: React.FC = () => {
