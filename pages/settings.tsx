@@ -1,4 +1,3 @@
-// src/pages/SettingsPage.tsx
 import React, { useState, useEffect } from "react";
 import styles from "@/styles/Settings.module.css";
 
@@ -29,19 +28,27 @@ const SettingsPage: React.FC = () => {
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-    const { name, value, type, checked } = event.target;
+    const { name, value, type } = event.target;
 
     if (type === "checkbox") {
-      setSettings((prevSettings) => ({
-        ...prevSettings,
-        [name]: checked
-          ? [...prevSettings[name], value]
-          : prevSettings[name].filter((item: string) => item !== value),
-      }));
+      setSettings((prevSettings) => {
+        const updatedArray = (
+          prevSettings[name as keyof Settings] as string[]
+        ).includes(value)
+          ? (prevSettings[name as keyof Settings] as string[]).filter(
+              (item) => item !== value
+            )
+          : [...(prevSettings[name as keyof Settings] as string[]), value];
+
+        return {
+          ...prevSettings,
+          [name as keyof Settings]: updatedArray,
+        };
+      });
     } else {
       setSettings((prevSettings) => ({
         ...prevSettings,
-        [name]: value,
+        [name as keyof Settings]: value,
       }));
     }
   };
