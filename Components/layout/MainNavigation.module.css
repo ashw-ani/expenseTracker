@@ -1,0 +1,27 @@
+.mainnav {
+  box-sizing: border-box;
+  background-color: rgb(26, 40, 51);
+  height: 4rem;
+  color: aliceblue;
+  padding: 1rem;
+  font-size: 2.3rem;
+  font-family: monospace;
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 50;
+}
+.icons {
+  color: aliceblue;
+}
+
+@media (max-width: 768px) {
+  .mainnav {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,5 @@
+.main {
+  width: 100vw;
+  min-height: calc(100vh - 4rem);
+  background-color: #ededed;
+}

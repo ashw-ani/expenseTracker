@@ -1,0 +1,30 @@
+/* src/styles/Settings.module.css */
+.settingsPage {
+  padding: 20px;
+}
+
+.settingsSection {
+  margin-bottom: 20px;
+}
+
+.settingsSection label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.settingsSection input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.settingsPage button {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.settingsPage button:hover {
+  background-color: #005bb5;
+}
